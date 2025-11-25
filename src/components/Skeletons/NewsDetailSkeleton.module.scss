@@ -1,0 +1,118 @@
+@import "../../styles/variables.scss";
+
+.skeletonContainer {
+  @include container;
+  padding: 2rem 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+  color: #fff;
+  min-height: 100vh;
+}
+
+.skeletonImage {
+  width: 100%;
+  max-width: 800px;
+  height: clamp(300px, 40vw, 450px);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  margin: 150px auto 2rem;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.skeletonTitle {
+  width: clamp(280px, 80%, 720px);
+  height: clamp(2rem, 5vw, 3rem);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  margin: 0 auto 1.5rem auto;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.skeletonDate {
+  width: clamp(160px, 30%, 200px);
+  height: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  margin: 0 auto 3rem auto;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.skeletonContent {
+  border-radius: 12px;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  margin-bottom: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  animation: pulse 1.5s infinite ease-in-out;
+  min-height: 400px;
+}
+
+.skeletonTextLine {
+  width: 100%;
+  height: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+  animation: pulse 1.5s infinite ease-in-out;
+
+  &:nth-child(2) {
+    width: 90%;
+  }
+
+  &:nth-child(3) {
+    width: 95%;
+  }
+}
+
+.skeletonTextLineHalf {
+  width: 50%;
+  height: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .skeletonContainer {
+    padding: 1.5rem 1rem;
+  }
+
+  .skeletonImage {
+    margin-top: 100px;
+  }
+
+  .skeletonContent {
+    padding: 1.5rem;
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skeletonImage {
+    margin-top: 80px;
+    height: 250px;
+  }
+
+  .skeletonContent {
+    padding: 1rem;
+    min-height: 250px;
+  }
+
+  .skeletonTitle {
+    height: 2rem;
+  }
+} 

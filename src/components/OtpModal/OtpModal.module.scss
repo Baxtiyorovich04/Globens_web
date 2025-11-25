@@ -1,0 +1,226 @@
+@use "../../styles/variables.scss" as *;
+@use "sass:color";
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.modalBody {
+  border-radius: 24px;
+  width: 672px;
+  max-width: 95vw;
+  height: 498px;
+  max-height: 95vh;
+  background: #1f1f23;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 40px 32px 32px 32px;
+  box-sizing: border-box;
+}
+
+.modalTitle {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 26px;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.modalSubtitle {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 20px;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 32px;
+  width: 100%;
+}
+
+.errorMessage {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #fca5a5;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  text-align: center;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.otpInputs {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin: 40px 0 48px 0;
+  flex-wrap: wrap;
+}
+
+.otpInput {
+  border: 1px solid transparent;
+  border-radius: 18px;
+  width: 65px;
+  height: 60px;
+  background: #2f2f2f;
+  color: #fff;
+  font-size: 1.8rem;
+  text-align: center;
+  outline: none;
+  font-family: var(--font-family);
+  transition: all 0.2s ease;
+
+  &:focus {
+    border-color: #7B61FF;
+    background: #2f2f2f;
+  }
+
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+.buttonRow {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  width: 100%;
+  margin-top: 32px;
+}
+
+.resendSection {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 24px;
+}
+
+.resendBtn {
+  background: none;
+  border: none;
+  color: #7b61ff;
+  font-family: var(--font-family);
+  font-size: 20px;
+  font-weight: 400;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.2s;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+
+  &:hover:not(:disabled) {
+    color: color.adjust(#7b61ff, $lightness: 10%);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.confirmBtn {
+  background: linear-gradient(130deg, #bb91ff 0%, #3f008c 92.79%);
+  border-radius: 24px;
+  width: 186px;
+  height: 45px;
+  color: #fff;
+  border: none;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 18px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+
+  &:hover:not(:disabled) {
+    opacity: 0.9;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.cancelBtn {
+  background: #808080;
+  border-radius: 24px;
+  width: 186px;
+  height: 45px;
+  color: #fff;
+  border: none;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 18px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+
+  &:hover:not(:disabled) {
+    opacity: 0.9;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+@media (max-width: 700px) {
+  .modalBody {
+    width: 98vw;
+    height: auto;
+    min-height: 400px;
+    padding: 24px 16px 24px 16px;
+    border-radius: 20px;
+  }
+  
+  .modalTitle {
+    font-size: 22px;
+  }
+  
+  .modalSubtitle {
+    font-size: 18px;
+  }
+  
+  .otpInputs {
+    gap: 12px;
+    margin: 32px 0 40px 0;
+  }
+  
+  .otpInput {
+    width: 55px;
+    height: 50px;
+    font-size: 1.5rem;
+    border-radius: 16px;
+  }
+  
+  .buttonRow {
+    gap: 16px;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .confirmBtn,
+  .cancelBtn {
+    width: 90vw;
+    max-width: 220px;
+    height: 42px;
+    font-size: 16px;
+  }
+  
+  .resendBtn {
+    font-size: 18px;
+  }
+}

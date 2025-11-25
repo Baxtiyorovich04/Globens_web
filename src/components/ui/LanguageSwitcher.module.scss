@@ -1,0 +1,127 @@
+@use 'sass:color';
+@use '@/styles/variables' as *;
+
+.languageSwitcher {
+  position: relative;
+  font-family: $font-family;
+  z-index: 100;
+
+  .triggerButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #7d12ff;
+    border-radius: 20px;
+    width: 130px;
+    height: 35px;
+    box-shadow: 2px 4px 4px 2px rgba(125, 18, 255, 0.33);
+    background: radial-gradient(65.77% 65.78% at 34.23% 51.43%, #7d12ff 0%, #4b0b99 100%);
+    font-weight: 500;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0 16px;
+  }
+
+  .triggerButton.open {
+    background: radial-gradient(65.77% 65.78% at 34.23% 51.43%, #fff 0%, #7d12ff 100%);
+    border: 1px solid #fff;
+    color: #7d12ff;
+  }
+
+  .currentLang {
+    white-space: nowrap;
+  }
+
+  .arrow {
+    display: flex;
+    transition: transform 0.3s ease;
+    color: $game-secondary;
+
+    &.open {
+      transform: rotate(180deg);
+    }
+  }
+
+  .dropdownMenu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    min-width: 180px;
+    background: rgba($game-dark, 0.95);
+    backdrop-filter: blur(12px);
+    border: 1px solid $game-secondary;
+    border-radius: 12px;
+    padding: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 10;
+
+    &.open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+
+  .menuItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 12px;
+    background: transparent;
+    color: $main-white;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 14px;
+
+    &:hover {
+      background: rgba($game-secondary, 0.2);
+    }
+
+    &.active {
+      background: rgba($game-secondary, 0.4);
+      color: $main-white;
+      font-weight: 600;
+    }
+  }
+
+  .langName {
+    text-align: left;
+  }
+
+  .langCode {
+    background: rgba($game-secondary, 0.3);
+    color: $game-secondary;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .languageSwitcher {
+    .triggerButton {
+      padding: 8px 12px;
+      font-size: 13px;
+    }
+
+    .dropdownMenu {
+      min-width: 160px;
+    }
+
+    .menuItem {
+      padding: 8px 10px;
+      font-size: 13px;
+    }
+  }
+}

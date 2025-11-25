@@ -1,0 +1,433 @@
+@use "sass:color";
+@use '../../../styles/variables.scss' as *;
+
+.registerRoot {
+  height: 100vh;
+  display: flex;
+  background: #000000;
+  position: relative;
+  overflow: hidden;
+}
+
+// Background SVG for all screen sizes
+.backgroundSvg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.svgImage {
+  filter: blur(30px);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+// Left Panel - Welcome/Login
+.leftPanel {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.welcomeContainer {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding: 30px;
+  background: rgba(217, 217, 217, 0.15);
+  border-radius: 35px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+}
+
+.welcomeContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.welcomeTitle {
+  font-family: var(--second-family);
+  font-weight: 600;
+  font-size: 42px;
+  color: #fff;
+  margin: 0;
+}
+
+.welcomeDesc {
+  font-family: var(--second-family);
+  font-weight: 500;
+  font-size: 26px;
+  text-align: center;
+  color: #fff;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.loginButton {
+  border: 5px solid #9217d1;
+  border-radius: 18px;
+  width: 300px;
+  height: 70px;
+  background: transparent;
+  font-family: var(--second-family);
+  font-weight: 500;
+  font-size: 26px;
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+
+  &:hover {
+    background: rgba(146, 23, 209, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(146, 23, 209, 0.3);
+  }
+}
+
+.rightPanel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #000000;
+  padding: 30px;
+  position: relative;
+  z-index: 2;
+  justify-content: center;
+}
+
+.logoBox {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  
+  .logoImg {
+    display: block;
+    max-width: 180px;
+    height: auto;
+  }
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 450px;
+  margin: 0 0 0 50px;
+  width: 100%;
+  height: 100%;
+}
+
+.formTitle {
+  font-family: var(--second-family);
+  font-weight: 600;
+  font-size: 40px;
+  color: #fff;
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.registerForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  width: 100%;
+
+  label {
+    font-family: var(--second-family);
+    font-weight: 500;
+    font-size: 20px;
+    text-align: left;
+    color: #fff;
+  }
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 402px;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 20px;
+  color: #7112a1;
+  font-size: 18px;
+  z-index: 2;
+}
+
+.input {
+  width: 100%;
+  max-width: 402px;
+  height: 55px;
+  padding: 0 20px 0 50px;
+  background: transparent;
+  border: 3px solid #7112a1;
+  border-radius: 14px;
+  color: #fff;
+  font-family: var(--second-family);
+  font-size: 16px;
+  transition: all 0.3s ease;
+  text-align: left;
+
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: #9217d1;
+    box-shadow: 0 0 20px rgba(113, 18, 161, 0.3);
+  }
+
+  &.inputError {
+    border-color: #ff4444;
+    box-shadow: 0 0 20px rgba(255, 68, 68, 0.3);
+  }
+}
+
+.passwordToggle {
+  position: absolute;
+  right: 20px;
+  background: none;
+  border: none;
+  color: #7112a1;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  z-index: 3;
+
+  &:hover {
+    color: #9217d1;
+    background: rgba(113, 18, 161, 0.1);
+  }
+
+  svg {
+    font-size: 18px;
+  }
+}
+
+.registerButton {
+  width: 100%;
+  max-width: 402px;
+  height: 55px;
+  border-radius: 14px;
+  background: linear-gradient(89deg, #7112a1 0%, #29073b 100%);
+  border: none;
+  font-family: var(--second-family);
+  font-weight: 500;
+  font-size: 22px;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(113, 18, 161, 0.4);
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+  }
+}
+
+.loginPrompt {
+  text-align: left;
+  font-family: var(--second-family);
+  font-weight: 500;
+  font-size: 16px;
+  color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.loginLink {
+  font-family: var(--second-family);
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+  color: #7112a1;
+  text-decoration: none;
+  margin-left: 8px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: #9217d1;
+    text-decoration: underline;
+  }
+}
+
+.errorMessage {
+  background: rgba(255, 68, 68, 0.1);
+  border: 1px solid rgba(255, 68, 68, 0.3);
+  color: #ff8888;
+  padding: 12px;
+  border-radius: 14px;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.fieldError {
+  color: #ff8888;
+  font-size: 12px;
+  margin-top: 4px;
+  text-align: center;
+}
+
+// Responsive Design - starting from 850px
+@media (max-width: 1200px) {
+  .welcomeContainer {
+    width: 450px;
+    height: 550px;
+  }
+  
+  .welcomeTitle {
+    font-size: 36px;
+  }
+  
+  .welcomeDesc {
+    font-size: 22px;
+  }
+  
+  .loginButton {
+    width: 280px;
+    height: 65px;
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 950px) {
+  .logoBox {
+    display: none;
+  }
+}
+
+@media (max-width: 850px) {
+  .registerRoot {
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .leftPanel {
+    display: none;
+  }
+  
+  .rightPanel {
+    padding: 15px;
+    padding-top: 70px;
+    min-height: 100vh;
+    justify-content: center;
+  }
+  
+  .formTitle {
+    font-size: 28px;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+  
+  .formContainer {
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+    text-align: center;
+    margin: 0;
+  }
+  
+  .registerForm {
+    align-items: flex-start;
+    width: 100%;
+    max-width: 350px;
+  }
+  
+  .inputGroup {
+    align-items: flex-start;
+    text-align: left;
+  }
+  
+  .inputGroup label {
+    text-align: left;
+  }
+  
+  .inputWrapper {
+    justify-content: flex-start;
+  }
+  
+  .input {
+    width: 100%;
+    max-width: 350px;
+    height: 45px;
+    font-size: 14px;
+    text-align: left;
+  }
+  
+  .registerButton {
+    width: 100%;
+    max-width: 350px;
+    height: 45px;
+    font-size: 18px;
+  }
+  
+  .loginPrompt {
+    text-align: center;
+    align-items: center;
+  }
+  
+  .formContainer {
+    max-width: 100%;
+  }
+  
+  .backgroundSvg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  
+  .svgImage {
+    filter: blur(30px);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+  }
+} 

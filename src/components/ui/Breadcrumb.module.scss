@@ -1,0 +1,62 @@
+@use "../../styles/variables.scss" as *;
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  
+  @media (max-width: 768px) {
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+  
+  @media (max-width: 480px) {
+    gap: 4px;
+    margin-bottom: 12px;
+  }
+}
+
+.breadcrumbItem {
+  font-family: var(--second-family);
+  font-weight: 500;
+  font-size: 14px;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  
+  @media (max-width: 768px) {
+    font-size: 13px;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 12px;
+  }
+
+  &:hover {
+    color: #7b61ff;
+  }
+
+  &.active {
+    background: linear-gradient(90deg, #7b61ff 40.98%, #4a3a99 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.separator {
+  font-family: var(--second-family);
+  font-weight: 500;
+  font-size: 14px;
+  color: #fff;
+  
+  @media (max-width: 768px) {
+    font-size: 13px;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 12px;
+  }
+} 

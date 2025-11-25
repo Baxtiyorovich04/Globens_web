@@ -1,0 +1,531 @@
+@use "sass:color";
+@use "@/styles/variables" as *;
+
+.serversPage {
+
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.heroSection {
+  position: relative;
+  height: 100vh;
+
+  color: #fff;
+  padding: 4rem 2rem 2rem 2rem;
+  background: linear-gradient(rgba($game-dark, 0.7), rgba($game-dark, 0.7)), url('/assets/imgs/ServersBg.webp') center/cover no-repeat;
+
+  overflow: hidden;
+
+  .heroContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    flex-direction: column;
+    @media (max-width: 760px) {
+      margin-top: 30px;
+    }
+  }
+
+  .heroTitle {
+    font-size: 2.5rem;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(90deg, $main-white, $game-secondary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 2px 10px rgba($game-secondary, 0.3);
+  }
+
+  .heroSubtitle {
+    font-size: 1.25rem;
+    opacity: 0.85;
+  }
+}
+
+/* Shared Section Styles */
+.container {
+  @include container;
+  padding: 60px 20px;
+  background: linear-gradient(rgba(26, 26, 46, 0.9), rgba(26, 26, 46, 0.9));
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 600;
+  color: $main-white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  svg {
+    color: $game-secondary;
+  }
+
+  @media (max-width: 750px) {
+    font-size: 24px;
+  }
+}
+
+/* Server Browser Section */
+.serversSection {
+  background: linear-gradient(rgba(26, 26, 46, 0.9), rgba(26, 26, 46, 0.9));
+}
+
+.serverFilters {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.filterSelect {
+  background: rgba($game-primary, 0.2);
+  color: $main-white;
+  border: 1px solid $game-secondary;
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-family: $font-family;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba($game-secondary, 0.2);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba($game-secondary, 0.5);
+  }
+}
+
+.serverList {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.serverCard {
+  display: flex;
+  align-items: center;
+  background: rgba($game-primary, 0.1);
+  border: 1px solid rgba($game-secondary, 0.3);
+  border-radius: 10px;
+  padding: 20px;
+  transition: all 0.3s ease;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  &:hover {
+    background: rgba($game-secondary, 0.1);
+    border-color: $game-secondary;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba($game-secondary, 0.2);
+  }
+}
+
+.serverIcon {
+  font-size: 2.5rem;
+  color: $game-secondary;
+  min-width: 50px;
+  text-align: center;
+}
+
+.serverInfo {
+  flex: 1;
+  min-width: 200px;
+}
+
+.serverName {
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+  color: $main-white;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.favoriteIcon {
+  color: #ff4757;
+  font-size: 1rem;
+}
+
+.gameName {
+  color: $game-secondary;
+  margin-bottom: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  padding: 2px 0;
+  display: inline-block;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: $game-secondary;
+    border-radius: 2px;
+  }
+}
+
+.description {
+  color: $main-white;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 5px;
+  max-width: 90%;
+}
+
+.mapName {
+  color: $text-gray;
+  font-size: 0.9rem;
+}
+
+.serverStats {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: $text-white;
+  font-weight: 500;
+  min-width: 80px;
+
+  svg {
+    color: $game-secondary;
+  }
+}
+
+.joinButton {
+  background: $primary-btn;
+  color: $main-white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+
+  &:hover {
+    background: color.adjust($primary-btn, $lightness: 10%);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+/* Popular Games Section */
+.gamesSection {
+  background: linear-gradient(rgba($game-dark, 0.9), rgba($game-dark, 0.9));
+}
+
+.gamesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.gameCard {
+  position: relative;
+  height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba($game-secondary, 0.3);
+  }
+}
+
+.gameOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba($game-dark, 0.9), transparent);
+  z-index: 1;
+}
+
+.gameIcon {
+  position: relative;
+  z-index: 2;
+  font-size: 2.5rem;
+  color: $main-white;
+  margin-bottom: 15px;
+}
+
+.gameInfo {
+  position: relative;
+  z-index: 2;
+}
+
+.gameName {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  color: $main-white;
+}
+
+.gamePlayers {
+  color: $second-primary-text;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+}
+
+.viewButton {
+  background: rgba($game-secondary, 0.3);
+  color: $main-white;
+  border: 1px solid $game-secondary;
+  padding: 8px 15px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba($game-secondary, 0.5);
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .heroSection {
+    height: 350px;
+
+    .heroTitle {
+      font-size: 2.8rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    height: 300px;
+
+    .heroTitle {
+      font-size: 2.3rem;
+    }
+
+    .heroSubtitle {
+      font-size: 1.1rem;
+    }
+  }
+
+  .serverCard {
+    flex-direction: column;
+    text-align: center;
+    padding: 25px;
+  }
+
+  .serverInfo {
+    text-align: center;
+  }
+
+  .serverStats {
+    justify-content: center;
+  }
+
+  .sectionHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroSection {
+    height: 250px;
+
+    .heroTitle {
+      font-size: 2rem;
+    }
+  }
+
+
+  .gamesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .filterSelect {
+    width: 100%;
+  }
+}
+
+/* Loading and Empty States */
+.loadingIndicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: $text-white;
+  font-weight: 500;
+  padding: 20px;
+  width: 100%;
+
+  svg {
+    color: $game-secondary;
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background: rgba($game-primary, 0.1);
+  border: 1px dashed rgba($game-secondary, 0.3);
+  border-radius: 10px;
+  color: $text-white;
+  text-align: center;
+
+  svg {
+    font-size: 3rem;
+    color: $game-secondary;
+    margin-bottom: 15px;
+    opacity: 0.7;
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  span {
+    color: $second-primary-text;
+    font-size: 0.9rem;
+  }
+}
+
+/* Skeleton Loaders */
+.skeletonCard {
+  display: flex;
+  align-items: center;
+  background: rgba($game-primary, 0.1);
+  border: 1px solid rgba($game-secondary, 0.3);
+  border-radius: 10px;
+  padding: 20px;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+    padding: 25px;
+  }
+}
+
+.skeletonPulse {
+  animation: pulse 1.5s infinite;
+  background: linear-gradient(90deg, rgba($game-primary, 0.1), rgba($game-secondary, 0.1), rgba($game-primary, 0.1));
+  background-size: 200% 100%;
+}
+
+@keyframes pulse {
+  0% { background-position: 0% 0%; }
+  100% { background-position: -200% 0%; }
+}
+
+.skeletonIcon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  @extend .skeletonPulse;
+}
+
+.skeletonInfo {
+  flex: 1;
+  min-width: 200px;
+
+  @media (max-width: 768px) {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.skeletonName {
+  height: 24px;
+  width: 70%;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  @extend .skeletonPulse;
+}
+
+.skeletonGame {
+  height: 16px;
+  width: 40%;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  @extend .skeletonPulse;
+}
+
+.skeletonDescription {
+  height: 16px;
+  width: 90%;
+  border-radius: 4px;
+  @extend .skeletonPulse;
+}
+
+.skeletonStats {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
+}
+
+.skeletonStat {
+  height: 20px;
+  width: 80px;
+  border-radius: 4px;
+  @extend .skeletonPulse;
+}
+
+.skeletonButton {
+  height: 40px;
+  width: 120px;
+  border-radius: 6px;
+  @extend .skeletonPulse;
+}

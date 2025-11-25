@@ -1,0 +1,515 @@
+@use "sass:color";
+@use "@/styles/variables" as *;
+
+.heroSection {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  color: $main-white;
+  overflow: hidden;
+  
+  @media (max-width: 768px) {
+    min-height: 90vh;
+  }
+  
+  @media (max-width: 480px) {
+    min-height: 80vh;
+  }
+}
+
+.heroBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: linear-gradient(
+    135deg,
+    rgba($game-dark, 0.9) 0%,
+    rgba($game-dark, 0.7) 50%,
+    rgba($game-primary, 0.5) 100%
+  );
+}
+
+
+
+
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 80px 20px;
+  
+  @media (max-width: 768px) {
+    padding: 60px 15px;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 62px 10px;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  
+  @media (max-width: 1024px) {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+  
+  @media (max-width: 768px) {
+    padding: 0 15px;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 0 10px;
+  }
+}
+
+.tournamentHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  gap: 40px;
+  
+  @media (max-width: 1024px) {
+    gap: 30px;
+  }
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  @media (max-width: 480px) {
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+}
+
+.tournamentInfo {
+  flex: 1;
+}
+
+.statusBadge {
+  margin-bottom: 20px;
+  
+  @media (max-width: 768px) {
+    margin-bottom: 15px;
+  }
+  
+  @media (max-width: 480px) {
+    margin-bottom: 10px;
+  }
+}
+
+.status {
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  
+  &.ongoing {
+    background: rgba(#00b894, 0.2);
+    color: #00b894;
+    border: 1px solid rgba(#00b894, 0.3);
+  }
+  
+  &.upcoming {
+    background: rgba(#fdcb6e, 0.2);
+    color: #fdcb6e;
+    border: 1px solid rgba(#fdcb6e, 0.3);
+  }
+  
+  &.completed {
+    background: rgba($game-secondary, 0.2);
+    color: $game-secondary;
+    border: 1px solid rgba($game-secondary, 0.3);
+  }
+  
+  @media (max-width: 768px) {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 5px 10px;
+    font-size: 0.75rem;
+  }
+}
+
+.tournamentTitle {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  background: linear-gradient(90deg, $main-white, $game-secondary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 2px 10px rgba($game-secondary, 0.3);
+  
+  @media (max-width: 1024px) {
+    font-size: 3rem;
+  }
+  
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+}
+
+.gameInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: $game-secondary;
+  font-size: 1.2rem;
+  font-weight: 500;
+  
+  .gameIcon {
+    font-size: 1.1rem;
+  }
+  
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+    gap: 8px;
+    
+    .gameIcon {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 1rem;
+    gap: 6px;
+    
+    .gameIcon {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+.prizeSection {
+  text-align: center;
+  padding: 30px;
+  background: rgba($game-primary, 0.1);
+  border: 1px solid rgba($game-secondary, 0.3);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  
+  @media (max-width: 1024px) {
+    padding: 25px;
+  }
+  
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 15px;
+  }
+}
+
+.prizeAmount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 10px;
+  
+  .trophyIcon {
+    font-size: 2rem;
+    color: #fdcb6e;
+    
+    @media (max-width: 768px) {
+      font-size: 1.8rem;
+    }
+    
+    @media (max-width: 480px) {
+      font-size: 1.5rem;
+    }
+  }
+  
+  span {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: $game-secondary;
+    
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+    
+    @media (max-width: 480px) {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+.prizeLabel {
+  color: $second-primary-text;
+  font-size: 1rem;
+  margin: 0;
+  
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
+  }
+}
+
+.tournamentStats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+  
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+  
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+}
+
+.statItem {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  background: rgba($game-primary, 0.1);
+  border: 1px solid rgba($game-secondary, 0.2);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    border-color: $game-secondary;
+    transform: translateY(-2px);
+  }
+  
+  @media (max-width: 1024px) {
+    padding: 18px;
+    gap: 14px;
+  }
+  
+  @media (max-width: 768px) {
+    padding: 15px;
+    gap: 12px;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 12px;
+    gap: 10px;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+}
+
+.statIcon {
+  font-size: 1.5rem;
+  color: $game-secondary;
+  min-width: 24px;
+  
+  @media (max-width: 1024px) {
+    font-size: 1.4rem;
+    min-width: 22px;
+  }
+  
+  @media (max-width: 768px) {
+    font-size: 1.3rem;
+    min-width: 20px;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 1.2rem;
+    min-width: 18px;
+    margin-bottom: 8px;
+  }
+}
+
+.statContent {
+  display: flex;
+  flex-direction: column;
+  
+  @media (max-width: 1024px) {
+    min-width: 0;
+    flex: 1;
+  }
+  
+  @media (max-width: 480px) {
+    min-width: 0;
+    flex: 1;
+    align-items: center;
+  }
+}
+
+.statValue {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: $main-white;
+  margin-bottom: 5px;
+  
+  @media (max-width: 1024px) {
+    font-size: 1.2rem;
+    margin-bottom: 4px;
+  }
+  
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 1rem;
+    margin-bottom: 3px;
+    text-align: center;
+  }
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  color: $second-primary-text;
+  
+  @media (max-width: 1024px) {
+    font-size: 0.85rem;
+  }
+  
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 0.75rem;
+    text-align: center;
+  }
+}
+
+.descriptionSection {
+  margin-bottom: 40px;
+  
+  @media (max-width: 768px) {
+    margin-bottom: 30px;
+  }
+  
+  @media (max-width: 480px) {
+    margin-bottom: 20px;
+  }
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: $text-white;
+  margin-bottom: 25px;
+  max-width: 800px;
+  
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+}
+
+
+
+.actionSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  
+  @media (max-width: 1024px) {
+    gap: 25px;
+  }
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  
+  @media (max-width: 480px) {
+    gap: 15px;
+  }
+}
+
+.registerButton {
+  background: $primary-btn;
+  color: $main-white;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  
+  &:hover {
+    background: color.adjust($primary-btn, $lightness: 10%);
+    transform: translateY(-2px);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+  
+  @media (max-width: 768px) {
+    padding: 14px 28px;
+    font-size: 1rem;
+    gap: 8px;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+    gap: 6px;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.buttonIcon {
+  font-size: 1.1rem;
+  
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+  }
+}
+
+

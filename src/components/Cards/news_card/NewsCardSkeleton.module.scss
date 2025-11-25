@@ -1,0 +1,151 @@
+.newsCardSkeleton {
+  width: 100%;
+  height: 418px;
+  border: 3px solid rgba(123, 97, 255, 0.3);
+  padding: 20px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.03);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.newsCardSkeleton__image {
+  width: 100%;
+  height: 290px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+
+.newsCardSkeleton__content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 8px;
+}
+
+.newsCardSkeleton__title {
+  width: 80%;
+  height: 18px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.newsCardSkeleton__description {
+  width: 100%;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+.newsCardSkeleton__icon {
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  align-self: flex-end;
+  margin-top: auto;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+@media (max-width: 1200px) {
+  .newsCardSkeleton {
+    height: 380px;
+  }
+  
+  .newsCardSkeleton__image {
+    height: 260px;
+  }
+  
+  .newsCardSkeleton__title {
+    height: 16px;
+  }
+  
+  .newsCardSkeleton__description {
+    height: 13px;
+  }
+}
+
+@media (max-width: 992px) {
+  .newsCardSkeleton {
+    height: 360px;
+  }
+  
+  .newsCardSkeleton__image {
+    height: 240px;
+  }
+}
+
+@media (max-width: 768px) {
+  .newsCardSkeleton {
+    height: auto;
+    min-height: 320px;
+  }
+  
+  .newsCardSkeleton__image {
+    height: 200px;
+  }
+  
+  .newsCardSkeleton__content {
+    padding: 12px 0 0 0;
+  }
+  
+  .newsCardSkeleton__title {
+    height: 16px;
+  }
+  
+  .newsCardSkeleton__description {
+    height: 13px;
+  }
+}
+
+@media (max-width: 576px) {
+  .newsCardSkeleton {
+    padding: 8px;
+    min-height: 280px;
+  }
+  
+  .newsCardSkeleton__image {
+    height: 160px;
+  }
+  
+  .newsCardSkeleton__content {
+    padding: 10px 0 0 0;
+  }
+  
+  .newsCardSkeleton__title {
+    height: 15px;
+  }
+  
+  .newsCardSkeleton__description {
+    height: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .newsCardSkeleton {
+    min-height: 250px;
+  }
+  
+  .newsCardSkeleton__image {
+    height: 140px;
+  }
+  
+  .newsCardSkeleton__description {
+    display: none;
+  }
+} 

@@ -1,0 +1,147 @@
+@use "../../../styles/variables.scss" as *;
+
+.newsPage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #020106;
+  color: $main-white;
+  overflow: hidden;
+}
+
+.NewsHero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heroGamepad {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  width: 405px;
+  height: 377px;
+}
+
+.heroTitle {
+  font-family: "Involve", sans-serif;
+  font-size: 80px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.rheroEffect {
+  position: absolute;
+  left: 0;
+  @media (max-width: 900px) {
+    display: none;
+  }
+}
+
+.lheroEffect {
+  position: absolute;
+  right: 0;
+  @media (max-width: 900px) {
+    display: none;
+  }
+}
+
+.container {
+  flex: 1;
+  
+  background-color: $main-bg;
+  margin: 0 auto;
+  width: 100%;
+
+  @media (max-width: 768px) {
+   
+  }
+
+  @media (max-width: 480px) {
+
+  }
+}
+
+// Error handling styles
+.errorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.errorMessage {
+  font-size: 18px;
+  color: #ff6b6b;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.retryButton {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #7b61ff 0%, #4a3a99 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(123, 97, 255, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 60px;
+  }
+
+  .errorMessage {
+    font-size: 16px;
+  }
+
+  .retryButton {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 40px;
+  }
+
+  .errorMessage {
+    font-size: 14px;
+  }
+
+  .retryButton {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+}

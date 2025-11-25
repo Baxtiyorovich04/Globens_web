@@ -1,0 +1,96 @@
+@use '@/styles/variables.scss' as *;
+
+.toastContainer {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.toast {
+  background: $card-bg;
+  color: $text-white;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-left: 4px solid;
+  min-width: 300px;
+  max-width: 400px;
+  font-family: $font-family;
+  font-size: 14px;
+  line-height: 1.4;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  &.success {
+    border-left-color: #4caf50;
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.1), $card-bg);
+  }
+
+  &.error {
+    border-left-color: #f44336;
+    background: linear-gradient(135deg, rgba(244, 67, 54, 0.1), $card-bg);
+  }
+
+  &.info {
+    border-left-color: $primary-color;
+    background: linear-gradient(135deg, rgba(123, 97, 255, 0.1), $card-bg);
+  }
+
+  .toastHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+
+  .toastTitle {
+    font-weight: 600;
+    font-size: 16px;
+    margin: 0;
+  }
+
+  .toastMessage {
+    margin: 0;
+    color: $text-gray;
+  }
+
+  .toastClose {
+    background: none;
+    border: none;
+    color: $text-gray;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+
+    &:hover {
+      color: $text-white;
+      background: rgba(255, 255, 255, 0.1);
+    }
+  }
+}
+
+// Animation classes
+.toastEnter {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.toastEnterActive {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.toastExit {
+  transform: translateX(100%);
+  opacity: 1;
+}
+
+.toastExitActive {
+  transform: translateX(100%);
+  opacity: 0;
+  transition: all 0.3s ease;
+} 

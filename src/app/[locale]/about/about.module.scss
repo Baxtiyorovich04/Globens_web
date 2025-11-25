@@ -1,0 +1,483 @@
+@use "sass:color";
+@use "@/styles/variables" as *;
+
+.aboutPage {
+  background: linear-gradient(180deg, #020106 0%, #221b53 50%, #0b0b0b 100%);
+  color: $main-white;
+  overflow: hidden;
+}
+
+.heroSection {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heroGamepad {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  width: 600px;
+  height: 560px;
+}
+
+.heroTitle {
+  font-family: "Involve", sans-serif;
+  font-size: 80px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.rheroEffect {
+  position: absolute;
+  left: 0;
+}
+
+.lheroEffect {
+  position: absolute;
+  right: 0;
+}
+
+.heroSubtitle {
+  font-family: "Involve", sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: #fff;
+  margin-top: 1rem;
+}
+
+.whyChooseSection {
+  padding: 120px 20px 100px 20px;
+  position: relative;
+}
+
+.sectionTitle {
+  color: #fff;
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.featuresContainer {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cardsColumn {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 120px;
+  position: relative;
+  z-index: 2;
+}
+
+.featureRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 180px;
+  position: relative;
+}
+
+.featureCard.left {
+  // flex: 1 1 40%;
+  margin-right: auto;
+  margin-left: 0;
+  text-align: center;
+}
+
+.featureCard.right {
+  // flex: 1 1 40%;
+  margin-left: auto;
+  margin-right: 0;
+  text-align: center;
+}
+
+.empty {
+  flex: 1 1 40%;
+  min-height: 180px;
+}
+
+.timelineSpacer {
+  flex: 0 0 120px;
+  width: 120px;
+  min-width: 120px;
+  max-width: 120px;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.timeline {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  top: 0;
+  bottom: 12px;
+  background: white;
+  border-radius: 30px;
+  z-index: 0;
+}
+
+.timelineDot {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 24px !important;
+  border-radius: 50%;
+  background: #020106;
+  border: 4px solid #7b61ff;
+  z-index: 2;
+
+  &:nth-child(2) {
+    top: 0;
+  }
+  &:nth-child(3) {
+    top: 40%;
+  }
+  &:nth-child(4) {
+    top: 66%;
+  }
+  &:nth-child(5) {
+    top: 90%;
+  }
+}
+
+.featureCard {
+  background: rgba(123, 97, 255, 0.1);
+  border: 1px solid rgba(123, 97, 255, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  padding: 40px;
+  text-align: center;
+  width: 450px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    background 0.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center !important;
+  text-align: center;
+  min-height: 250px;
+  height: 100%;
+
+  &:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(123, 97, 255, 0.4);
+    background: radial-gradient(
+      65.41% 65.41% at 44.89% 16.89%,
+      #7b61ff 0%,
+      #624ecc 50%,
+      #4a3a99 100%
+    );
+  }
+
+  &.active {
+    background: radial-gradient(
+      65.41% 65.41% at 44.89% 16.89%,
+      #7b61ff 0%,
+      #624ecc 50%,
+      #4a3a99 100%
+    );
+  }
+}
+
+.featureIcon {
+  margin-bottom: 25px;
+}
+
+.featureTitle {
+  font-size: 34px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 25px;
+}
+
+.featureDescription {
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 140%;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.timelineProgress {
+  width: 100%;
+  height: 0;
+  background: #7b61ff;
+  border-radius: 30px;
+  transition: height 0.1s linear;
+}
+
+.CyberWomenSec {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 100px 5px;
+}
+@media (max-width: 800px) {
+  .CyberWomenSec img {
+    width: 100%;
+    height: 305px;
+  }
+}
+
+.CyberWomenContent {
+  h1 {
+    margin-bottom: 40px;
+    font-size: 50px;
+    font-weight: 600;
+    color: #fff;
+  }
+  h3 {
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 140%;
+    color: #fff;
+  }
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .heroTitle {
+    font-size: 70px;
+  }
+
+  .heroSubtitle {
+    font-size: 24px;
+  }
+
+  .heroGamepad {
+    width: 500px;
+    height: auto;
+  }
+
+  .sectionTitle {
+    font-size: 44px;
+  }
+
+  .featureCard {
+    width: 400px;
+    padding: 35px;
+  }
+
+  .featureTitle {
+    font-size: 30px;
+  }
+
+  .featureDescription {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 900px) {
+  .heroTitle {
+    font-size: 50px;
+  }
+
+  .heroSubtitle {
+    font-size: 20px;
+  }
+
+  .heroGamepad {
+    width: 400px;
+    height: auto;
+  }
+
+  .sectionTitle {
+    font-size: 36px;
+    margin-bottom: 60px;
+  }
+
+  .whyChooseSection {
+    padding: 80px 20px 60px 20px;
+  }
+
+  .featuresContainer {
+    flex-direction: column;
+  }
+
+  .timeline {
+    display: none;
+  }
+
+  .featureCard {
+    width: 100%;
+    max-width: 400px;
+    min-height: auto;
+    padding: 30px;
+  }
+
+  .featureTitle {
+    font-size: 28px;
+  }
+
+  .featureDescription {
+    font-size: 20px;
+  }
+
+  .cardsColumn {
+    gap: 60px;
+  }
+
+  .CyberWomenSec {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 20px;
+  }
+
+  .CyberWomenContent {
+    h1 {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 22px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 40px;
+  }
+
+  .heroSubtitle {
+    font-size: 18px;
+  }
+
+  .heroGamepad {
+    width: 300px;
+    height: auto;
+  }
+
+  .sectionTitle {
+    font-size: 32px;
+    margin-bottom: 50px;
+  }
+
+  .whyChooseSection {
+    padding: 60px 15px 40px 15px;
+  }
+
+  .featureCard {
+    padding: 25px;
+  }
+
+  .featureTitle {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .featureDescription {
+    font-size: 18px;
+  }
+
+  .cardsColumn {
+    gap: 40px;
+  }
+
+  .CyberWomenSec {
+    padding: 40px 15px;
+  }
+
+  .CyberWomenContent {
+    h1 {
+      font-size: 36px;
+    }
+
+    h3 {
+      font-size: 20px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 32px;
+  }
+
+  .heroSubtitle {
+    font-size: 16px;
+  }
+
+  .heroGamepad {
+    width: 250px;
+    height: auto;
+  }
+
+  .sectionTitle {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+
+  .whyChooseSection {
+    padding: 40px 10px 30px 10px;
+  }
+
+  .featureCard {
+    padding: 20px;
+  }
+
+  .featureTitle {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .featureDescription {
+    font-size: 16px;
+  }
+
+  .cardsColumn {
+    gap: 30px;
+  }
+
+  .CyberWomenSec {
+    padding: 30px 10px;
+  }
+
+  .CyberWomenContent {
+    h1 {
+      font-size: 28px;
+    }
+
+    h3 {
+      font-size: 18px;
+    }
+  }
+}
+
+/* Kichik ekranlarda hero effectlarni yashirish */
+@media (max-width: 900px) {
+  .lheroEffect,
+  .rheroEffect {
+    display: none;
+  }
+}

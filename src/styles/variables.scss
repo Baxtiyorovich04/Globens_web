@@ -1,0 +1,27 @@
+// colors of texts
+$main-white: #ffff;
+$text-white: #fff;
+$second-primary-text: #a7a0a0ca;
+$text-gray: #bcbcbc;
+
+// backgrounds
+$dark-bg: #1a1a1a;
+$card-bg: #222;
+
+// buttons colors
+$primary-color: #7b61ff;
+$primary-btn: #7D12FF;
+$ppcards-btn: rgba(125, 18, 255, 0.2);
+$game-primary: #6a5acd;
+$game-secondary: #7D12FF;
+$game-dark: #1a1a2e;
+$game-light: #f8f8ff;
+$main-bg: #191825;
+
+// fonts
+$font-family: 'Involve', sans-serif;
+
+@mixin container {
+  max-width: 1400px;
+  margin: 0 auto;
+}

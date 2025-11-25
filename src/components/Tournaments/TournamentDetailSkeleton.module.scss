@@ -1,0 +1,311 @@
+@use "@/styles/variables" as *;
+
+.skeletonContainer {
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    rgba($game-dark, 0.9) 0%,
+    rgba($game-dark, 0.7) 50%,
+    rgba($game-primary, 0.5) 100%
+  );
+}
+
+/* Hero Section Skeleton */
+.heroSkeleton {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.heroBackgroundSkeleton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba($game-dark, 0.9) 0%,
+    rgba($game-dark, 0.7) 50%,
+    rgba($game-primary, 0.5) 100%
+  );
+}
+
+.heroContentSkeleton {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 80px 20px;
+}
+
+.containerSkeleton {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.headerSkeleton {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  gap: 40px;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.statusBadgeSkeleton {
+  width: 120px;
+  height: 32px;
+  background: rgba($game-secondary, 0.2);
+  border-radius: 25px;
+  animation: skeletonPulse 1.5s ease-in-out infinite;
+}
+
+.titleSkeleton {
+  width: 400px;
+  height: 60px;
+  background: rgba($game-secondary, 0.2);
+  border-radius: 8px;
+  animation: skeletonPulse 1.5s ease-in-out infinite;
+  
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 40px;
+  }
+}
+
+.gameInfoSkeleton {
+  width: 200px;
+  height: 24px;
+  background: rgba($game-secondary, 0.2);
+  border-radius: 6px;
+  animation: skeletonPulse 1.5s ease-in-out infinite;
+}
+
+.prizeSectionSkeleton {
+  text-align: center;
+  padding: 30px;
+  background: rgba($game-primary, 0.1);
+  border: 1px solid rgba($game-secondary, 0.3);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
+}
+
+.prizeAmountSkeleton {
+  width: 200px;
+  height: 40px;
+  background: rgba($game-secondary, 0.2);
+  border-radius: 8px;
+  margin: 0 auto 10px;
+  animation: skeletonPulse 1.5s ease-in-out infinite;
+}
+
+.prizeLabelSkeleton {
+  width: 120px;
+  height: 20px;
+  background: rgba($game-secondary, 0.2);
+  border-radius: 6px;
+  margin: 0 auto;
+  animation: skeletonPulse 1.5s ease-in-out infinite;
+}
+
+.statsSkeleton {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+.statItemSkeleton {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  background: rgba($game-primary, 0.1);
+  border: 1px solid rgba($game-secondary, 0.2);
+  border-radius: 12px;
+}
+
+.statIconSkeleton {
+  width: 24px;
+  height: 24px;
+  background: rgba($game-secondary, 0.2);
+  border-radius: 50%;
+  animation: skeletonPulse 1.5s ease-in-out infinite;
+}
+
+.statContentSkeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.statValueSkeleton {
+  width: 80px;
+  height: 20px;
+  background: rgba($game-secondary, 0.2);
+  border-radius: 4px;
+  animation: skeletonPulse 1.5s ease-in-out infinite;
+}
+
+.statLabelSkeleton {
+  width: 120px;
+  height: 16px;
+  background: rgba($game-secondary, 0.2);
+  border-radius: 4px;
+  animation: skeletonPulse 1.5s ease-in-out infinite;
+}
+
+.descriptionSkeleton {
+  width: 100%;
+  max-width: 800px;
+  height: 80px;
+  background: rgba($game-secondary, 0.2);
+  border-radius: 8px;
+  margin-bottom: 40px;
+  animation: skeletonPulse 1.5s ease-in-out infinite;
+}
+
+.actionButtonSkeleton {
+  width: 200px;
+  height: 48px;
+  background: rgba($game-secondary, 0.2);
+  border-radius: 8px;
+  animation: skeletonPulse 1.5s ease-in-out infinite;
+}
+
+/* Tabs Skeleton */
+.tabsSkeleton {
+  background: linear-gradient(
+    135deg,
+    rgba($game-dark, 0.9) 0%,
+    rgba($game-dark, 0.7) 50%,
+    rgba($game-primary, 0.5) 100%
+  );
+  padding: 60px 20px;
+}
+
+.tabsHeaderSkeleton {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 40px;
+  justify-content: center;
+  
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+}
+
+.tabButtonSkeleton {
+  width: 140px;
+  height: 48px;
+  background: rgba($game-secondary, 0.2);
+  border-radius: 8px;
+  animation: skeletonPulse 1.5s ease-in-out infinite;
+}
+
+.tabContentSkeleton {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contentHeaderSkeleton {
+  margin-bottom: 40px;
+}
+
+.contentTitleSkeleton {
+  width: 300px;
+  height: 32px;
+  background: rgba($game-secondary, 0.2);
+  border-radius: 6px;
+  margin-bottom: 15px;
+  animation: skeletonPulse 1.5s ease-in-out infinite;
+}
+
+.contentDescriptionSkeleton {
+  width: 500px;
+  height: 20px;
+  background: rgba($game-secondary, 0.2);
+  border-radius: 4px;
+  animation: skeletonPulse 1.5s ease-in-out infinite;
+}
+
+.contentGridSkeleton {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 25px;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.gridItemSkeleton {
+  background: rgba($game-primary, 0.1);
+  border: 1px solid rgba($game-secondary, 0.3);
+  border-radius: 12px;
+  padding: 25px;
+}
+
+.itemHeaderSkeleton {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.itemIconSkeleton {
+  width: 48px;
+  height: 48px;
+  background: rgba($game-secondary, 0.2);
+  border-radius: 50%;
+  animation: skeletonPulse 1.5s ease-in-out infinite;
+}
+
+.itemTitleSkeleton {
+  width: 200px;
+  height: 24px;
+  background: rgba($game-secondary, 0.2);
+  border-radius: 4px;
+  animation: skeletonPulse 1.5s ease-in-out infinite;
+}
+
+.itemContentSkeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.itemTextSkeleton {
+  width: 100%;
+  height: 16px;
+  background: rgba($game-secondary, 0.2);
+  border-radius: 4px;
+  animation: skeletonPulse 1.5s ease-in-out infinite;
+}
+
+/* Skeleton Animation */
+@keyframes skeletonPulse {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}

@@ -1,0 +1,226 @@
+@use "../../styles/variables.scss" as *;
+
+.bannerImage {
+  border-radius: 10px;
+  padding: 122px 0 122px 110px;
+  height: 512px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  transition: all 0.5s ease-in-out;
+  opacity: 0.9;
+  position: relative;
+  z-index: 1;
+  
+  &:hover {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+  
+  @media (max-width: 770px) {
+    height: 300px;
+  }
+}
+
+.description {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 156%;
+  color: var(--white);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  margin: 0;
+}
+
+.title {
+  font-family: var(--second-family);
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 123%;
+  color: var(--white);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  margin: 0;
+}
+
+.carouselDotActive {
+  border-radius: 8px;
+  width: 70px;
+  height: 6px;
+  background: $primary-btn;
+  transition: all 0.3s ease;
+}
+
+.carouselDot {
+  border-radius: 8px;
+  width: 40px;
+  height: 6px;
+  background: $main-white;
+  opacity: 0.2;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    opacity: 0.4;
+    transform: scale(1.1);
+  }
+}
+
+.bannerContainer {
+  max-width: 1240px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+}
+
+.bannerContent {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 500px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 2;
+  
+  &:hover {
+    background: rgba(0, 0, 0, 0.7);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  }
+  
+  @media (max-width: 770px) {
+    position: absolute;
+    bottom: 1px;
+    left: 10px;
+    padding: 15px;
+    max-width: 300px;
+    width: calc(100% - 20px);
+    min-height: 120px;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    z-index: 3;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    text-align: center;
+    
+    &:hover {
+      background: rgba(0, 0, 0, 0.9);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+    
+    h2 {
+      font-size: 20px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+      margin: 0;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      text-decoration: none;
+      white-space: normal;
+      word-wrap: break-word;
+    }
+    p {
+      font-size: 14px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+      margin: 0;
+      font-weight: 500;
+      line-height: 1.4;
+      letter-spacing: 0.3px;
+      text-transform: none;
+      text-decoration: none;
+      white-space: normal;
+      word-wrap: break-word;
+    }
+  }
+}
+
+.carouselDots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 50px;
+  z-index: 10;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.skeletonBannerContainer {
+  max-width: 1240px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  height: 550px; /* Same height as actual banner */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: #2a2a2a; /* A darker background for the skeleton */
+  border-radius: 10px;
+  padding: 122px 0px 122px 110px;
+}
+
+.skeletonBannerContent {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 500px;
+}
+
+.skeletonTitle {
+  width: 70%;
+  height: 26px;
+  background: linear-gradient(90deg, #3a3a3a 25%, #4a4a4a 50%, #3a3a3a 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: 4px;
+}
+
+.skeletonDescription {
+  width: 90%;
+  height: 18px;
+  background: linear-gradient(90deg, #3a3a3a 25%, #4a4a4a 50%, #3a3a3a 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: 4px;
+}
+
+.skeletonDots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.skeletonDot {
+  border-radius: 8px;
+  width: 40px;
+  height: 6px;
+  background: #3a3a3a;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+} 

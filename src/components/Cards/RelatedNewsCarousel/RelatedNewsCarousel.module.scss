@@ -1,0 +1,217 @@
+.relatedNews {
+  margin-top: 60px;
+  padding: 40px;
+  
+  @media (max-width: 1024px) {
+    margin-top: 50px;
+    padding: 30px;
+  }
+  
+  @media (max-width: 768px) {
+    margin-top: 40px;
+    padding: 20px;
+  }
+  
+  @media (max-width: 480px) {
+    margin-top: 30px;
+    padding: 15px;
+  }
+}
+
+.relatedNewsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    margin-bottom: 25px;
+  }
+  
+  @media (max-width: 480px) {
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+    
+    @media (max-width: 1024px) {
+      font-size: 28px;
+    }
+    
+    @media (max-width: 768px) {
+      font-size: 24px;
+    }
+    
+    @media (max-width: 480px) {
+      font-size: 20px;
+    }
+  }
+}
+
+// Skeleton styles for loading state
+.skeletonTitle {
+  width: 200px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  animation: pulse 1.5s infinite ease-in-out;
+  
+  @media (max-width: 1024px) {
+    width: 180px;
+    height: 28px;
+  }
+  
+  @media (max-width: 768px) {
+    width: 150px;
+    height: 24px;
+  }
+  
+  @media (max-width: 480px) {
+    width: 120px;
+    height: 20px;
+  }
+}
+
+.skeletonButton {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  animation: pulse 1.5s infinite ease-in-out;
+  
+  &:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+.relatedNewsControls {
+  display: flex;
+  gap: 12px;
+  
+  @media (max-width: 480px) {
+    gap: 8px;
+  }
+}
+
+.arrowButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 2px solid #3a3a3a;
+  background: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #fff;
+  
+  @media (max-width: 768px) {
+    width: 44px;
+    height: 44px;
+  }
+  
+  @media (max-width: 480px) {
+    width: 40px;
+    height: 40px;
+    border-width: 1.5px;
+  }
+
+  &:hover:not(.disabled) {
+    border-color: #007bff;
+    background: rgba(0, 123, 255, 0.1);
+  }
+
+  &.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    border-color: #2a2a2a;
+    color: #666;
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+    
+    @media (max-width: 768px) {
+      width: 18px;
+      height: 18px;
+    }
+    
+    @media (max-width: 480px) {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+.relatedNewsCards {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.carouselTrack {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+  gap: 20px;
+  width: 100%;
+  
+  @media (max-width: 1024px) {
+    gap: 16px;
+  }
+  
+  @media (max-width: 768px) {
+    gap: 12px;
+  }
+  
+  @media (max-width: 480px) {
+    gap: 0;
+  }
+}
+
+.relatedNewsCardWrapper {
+  min-width: 0;
+  flex-shrink: 0;
+}
+
+@media (max-width: 1024px) {
+  .relatedNewsCardWrapper {
+    flex: 0 0 calc(33.333% - 14px) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .relatedNewsCardWrapper {
+    flex: 0 0 calc(50% - 8px) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .relatedNewsCardWrapper {
+    flex: 0 0 100% !important;
+  }
+  
+  .relatedNewsCards {
+    overflow: hidden;
+  }
+} 
