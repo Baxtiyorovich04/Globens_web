@@ -1,6 +1,6 @@
-# Globens Frontend - Turnir Detail Page
+# Globens Frontend 
 
-Bu loyiha turnir cardlari uchun detail page yaratish uchun ishlab chiqilgan.
+
 
 ## 🚀 Xususiyatlar
 
